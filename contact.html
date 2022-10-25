@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <section id="header">
+        <h1>Portfolio</h1>
+    </section>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="introductie.html">Introductie</a>
+        <a href="hobby.html">Hobby's</a>
+        <a href="learn.html">Wat wil ik leren</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <section class="card">
+        <h6>Formulier</h6>
+        <br>
+            <div class="formfield">
+              <label type="name">Naam</label>
+              <input type="text" name="name" id="name" required>
+            </div>
+            <div class="formfield">
+              <label class="label" for="send-to">Geslacht</label>
+              <select id="gender" name="gender" required>
+                <option value="m">Man</option>
+                <option value="f">Vrouw</option>
+                <option value="o">Anders</option>
+              </select>
+            </div>
+            <div class="formfield">
+              <label type="city">Woonplaats</label>
+              <input type="text" name="city" id="city" required>
+            </div>
+            <div class="formfield">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="naam@hr.nl" required>
+            </div>
+            <div class="formfield">
+              <label for="date">Datum</label>
+              <input type="date" name="date" id="date" required>
+            </div>
+            <div class="formfield"> 
+              <label type="question">Mijn vraag</label>
+              <input type="textarea" name="question" id="question" placeholder="Stel je vraag hier.">
+            </div>  
+            <div class="formclick">
+            <input type="radio" name="option" id="option" required><label for="option">Ik ga akkoord met de voorwaarden</label>
+            </div>
+            <div class="formfield">
+            <button type="submit">Versturen</button>
+            </div>
+          </form>
+    <br>      
+    <section>
+      <section class="contact">
+          <a href="https://www.hogeschoolrotterdam.nl">1024322@hr.nl</a>
+    </section>    
+    <footer>
+        <span> &copy; Copyright Raymond 2022</span>
+    </footer>
+</body>
+</html>
