@@ -116,6 +116,10 @@ iframe{
   justify-content: center;
 }
 
+.project4 {
+  display: flex;
+  justify-content: center;
+}
 
 .CLE1project {
   transition: transform .2s;
@@ -143,6 +147,16 @@ iframe{
 }
 
 .CLE3project:hover {
+  transform:scale(1.8);
+}
+
+.CLE4project {
+  transition: transform .2s;
+  width: 20%;
+  height: 200px
+}
+
+.CLE4project:hover {
   transform:scale(1.8);
 }
 
