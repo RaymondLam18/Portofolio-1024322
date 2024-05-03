@@ -7,6 +7,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: rgb(199,203,220);
+  text-align: center;
 }
 
 .header {
@@ -38,7 +39,6 @@ h1 {
 
 .profile-picture {
   margin-top: 2%;
-  margin-left: 21%;
   width: 59%;
 }
 
@@ -141,6 +141,16 @@ h3 {
 }
 
 .CLE4project:hover {
+  transform:scale(1.8);
+}
+
+.programmeren8 {
+  transition: transform .2s;
+  width: 34%;
+  height: 200px
+}
+
+.programmeren8:hover {
   transform:scale(1.8);
 }
 
