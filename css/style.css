@@ -80,11 +80,6 @@ h3 {
   margin-top: 20px;
 } */
 
-.programmeren {
-  margin-left: 13%;
-  width: 75%;
-}
-
 .project1 {
   display: flex;
   justify-content: center;
@@ -105,53 +100,43 @@ h3 {
   justify-content: center;
 }
 
-.CLE1project {
-  transition: transform .2s;
-  width: 20%;
+.image-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%; /* Pas dit aan naar behoefte */
+  margin: auto;
+  overflow: hidden;
 }
 
-.CLE1project:hover {
-  transform:scale(1.8);
+.carousel-wrapper {
+  width: 70%; /* Breedte van de zichtbare afbeelding */
+  overflow: hidden;
+  text-align: center;
 }
 
-.CLE2project {
-  transition: transform .2s;
-  width: 30%;
-  height: 200px
+.carousel-content {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Voor een soepele overgang */
 }
 
-.CLE2project:hover {
-  transform:scale(1.8);
+.carousel-image {
+  width: 100%; /* Breedte van een afbeelding */
 }
 
-.CLE3project {
-  transition: transform .2s;
-  width: 20%;
-  height: 200px
+button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.5em;
+  border-radius: 50%;
+  margin: 0 5px;
 }
 
-.CLE3project:hover {
-  transform:scale(1.8);
-}
-
-.CLE4project {
-  transition: transform .2s;
-  width: 20%;
-  height: 200px
-}
-
-.CLE4project:hover {
-  transform:scale(1.8);
-}
-
-.programmeren8 {
-  transition: transform .2s;
-  width: 34%;
-  height: 200px
-}
-
-.programmeren8:hover {
-  transform:scale(1.8);
+button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .contact {
@@ -323,13 +308,6 @@ button {
   }  
 
   .school {
-    margin-top: 2%;
-    margin-left: 10.5%;
-    width: 80%;
-    height: 30em;
-  }
-
-  .programmeren {
     margin-top: 2%;
     margin-left: 10.5%;
     width: 80%;
