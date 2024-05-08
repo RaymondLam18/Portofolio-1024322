@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBtn = document.querySelector('.close');
 
     carousels.forEach((carousel) => {
-        const prevButton = carousel.querySelector('.prev');
-        const nextButton = carousel.querySelector('.next');
         const carouselWrapper = carousel.querySelector('.carousel-content');
         const images = carousel.querySelectorAll('.carousel-image');
         let currentIndex = 0;
+        let isTouching = false;
+        let isDragging = false;
+        let startX = 0;
 
         function updateCarousel() {
             const width = images[currentIndex].clientWidth;
@@ -17,39 +18,77 @@ document.addEventListener('DOMContentLoaded', function() {
             carouselWrapper.style.transform = `translateX(${offset}px)`;
         }
 
-        prevButton.addEventListener('click', function() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
+        // Handlers voor touch- en muisgebeurtenissen
+        function handleTouchStart(event) {
+            isTouching = true;
+            startX = event.touches[0].clientX;
+        }
 
-        nextButton.addEventListener('click', function() {
-            if (currentIndex < images.length - 1) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
+        function handleMouseDown(event) {
+            isDragging = true;
+            startX = event.clientX;
+        }
 
-        // Voeg event listeners toe aan de afbeeldingen
-        images.forEach((image) => {
-            image.addEventListener('click', function() {
+        function handleTouchMove(event) {
+            handleSwipe(event.touches[0].clientX);
+        }
+
+        function handleMouseMove(event) {
+            handleSwipe(event.clientX);
+        }
+
+        function handleTouchEnd() {
+            isTouching = false;
+        }
+
+        function handleMouseUp() {
+            isDragging = false;
+        }
+
+        function handleSwipe(currentX) {
+            if (isTouching || isDragging) {
+                const diffX = startX - currentX;
+
+                if (diffX > 20) {
+                    if (currentIndex < images.length - 1) {
+                        currentIndex++;
+                        updateCarousel();
+                    }
+                } else if (diffX < -20) {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
+                }
+
+                startX = currentX;
+            }
+        }
+
+        carousel.addEventListener('touchstart', handleTouchStart);
+        carousel.addEventListener('mousedown', handleMouseDown);
+
+        carousel.addEventListener('touchmove', handleTouchMove);
+        document.addEventListener('mousemove', handleMouseMove);
+
+        carousel.addEventListener('touchend', handleTouchEnd);
+        document.addEventListener('mouseup', handleMouseUp);
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
                 modal.style.display = 'block';
-                modalImg.src = this.src;
+                modalImg.src = image.src;
             });
         });
 
-        // Initialiseer de carrousel bij laden
         updateCarousel();
     });
 
-    // Sluit de modal wanneer op de close-knop wordt geklikt
-    closeBtn.addEventListener('click', function() {
+    closeBtn.addEventListener('click', () => {
         modal.style.display = 'none';
     });
 
-    // Sluit de modal wanneer er buiten het modal wordt geklikt
-    window.addEventListener('click', function(event) {
+    window.addEventListener('click', event => {
         if (event.target === modal) {
             modal.style.display = 'none';
         }

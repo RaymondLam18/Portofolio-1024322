@@ -104,24 +104,25 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%; /* Pas dit aan naar behoefte */
+  width: 80%;
   margin: auto;
   overflow: hidden;
 }
 
 .carousel-wrapper {
-  width: 70%; /* Breedte van de zichtbare afbeelding */
+  width: 70%;
   overflow: hidden;
   text-align: center;
 }
 
 .carousel-content {
   display: flex;
-  transition: transform 0.5s ease-in-out; /* Voor een soepele overgang */
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-image {
-  width: 100%; /* Breedte van een afbeelding */
+  width: 100%;
+  pointer-events: auto;
 }
 
 button {
