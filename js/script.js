@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
             carouselWrapper.style.transform = `translateX(${offset}px)`;
         }
 
-        // Handlers voor touch- en muisgebeurtenissen
         function handleTouchStart(event) {
             isTouching = true;
             startX = event.touches[0].clientX;
@@ -48,22 +47,23 @@ document.addEventListener('DOMContentLoaded', function() {
         function handleSwipe(currentX) {
             if (isTouching || isDragging) {
                 const diffX = startX - currentX;
-
-                if (diffX > 20) {
-                    if (currentIndex < images.length - 1) {
+        
+                if (diffX > 0) {
+                    if (diffX > 20 && currentIndex < images.length - 1) {
                         currentIndex++;
                         updateCarousel();
                     }
-                } else if (diffX < -20) {
-                    if (currentIndex > 0) {
+                } else {
+                    if (diffX < -20 && currentIndex > 0) {
                         currentIndex--;
                         updateCarousel();
                     }
                 }
-
+        
                 startX = currentX;
             }
         }
+        
 
         carousel.addEventListener('touchstart', handleTouchStart);
         carousel.addEventListener('mousedown', handleMouseDown);
