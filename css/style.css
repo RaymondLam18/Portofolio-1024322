@@ -286,21 +286,20 @@ button {
 }
 
 
-@media only screen and (max-width:768px) {
-  /* Media query aangepaste styling */
-    body {
-        height: auto; /* Pas de hoogte aan voor mobiele apparaten */
-    }
+@media only screen and (max-width:768px) {  
+  body {
+      height: auto;
+  }
     
-    .card {
-        width: 80%; /* Pas de breedte aan voor mobiele apparaten */
-        margin: auto;
-    }
+  .card {
+      width: 80%;
+      margin: auto;
+  }
 
-    .profile-picture {
-        width: 100%; /* Volledige breedte gebruiken op mobiele apparaten */
-        margin: 0;
-    }  
+  .profile-picture {
+      width: 100%;
+      margin: 0;
+  }  
 
   .school {
     margin-top: 2%;
@@ -311,13 +310,35 @@ button {
 
   nav {
     display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-bottom: 2%;
-    width: 10em;
+    justify-content: center;
+    margin: 2% auto;
+  }
+
+  nav a {
+      display: inline-block;
+      padding: 10px 0;
+      font-size: 1rem;
+      text-align: center;
+      margin: 0 5px;
   }
 
   button {
     width: 40%;
+  }
+
+  .carousel-image {
+    width: 100%;
+    height: auto;
+  }
+
+
+  body, p, h2 {
+      font-size: 0.9rem;
+  }
+
+  #modal-img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
   }
 }
