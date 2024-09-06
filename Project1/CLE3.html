@@ -4,51 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CLE3 project, a web service developed for seniors interested in outings, with images and code examples.">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Mijn Portfolio</title>
+    <title>CLE3 Project - Portfolio of Raymond Lam</title>
 </head>
 <body>
-    <section id="header">
-        <h1>Portfolio</h1>
-    </section>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="../introductie.html">Introductie</a>
-        <a href="../projecten.html">Projecten</a>
-    </nav>
-    <section class="card">
-        <section>
-            <section id="project">
-                <h2>CLE3</h2>
-                    <section class="image-carousel">
-                        <div class="carousel-wrapper">
-                            <div class="carousel-content">
-                                <img class="carousel-image"img src="../img/download.jpg" alt="CLE3project">
-                                <img class="carousel-image"img src="../img/Screenshot 2023-04-05 110804.png" alt="CLE3project">
-                                <img class="carousel-image"img src="../img/Screenshot 2023-04-05 110835.png" alt="CLE3project">
-                                <img class="carousel-image"img src="../img/Screenshot 2023-04-05 115603.png" alt="CLE3project">
-                                <img class="carousel-image"img src="../img/Screenshot 2023-04-05 115623.png" alt="CLE3project">
-                            </div>
-                        </div>
-                    </section>
+    <div id="page" class="fade">
+        <header>
+            <h1>Raymond Lam Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../introductie.html">Introductie</a></li>
+                    <li><a href="../projecten.html">Projecten</a></li>
+                </ul>
+            </nav>
+        </header>
 
-                    <p>Tijdens de derde CLE-opdracht was ons doel om een webservice te ontwikkelen voor een specifieke doelgroep. Mijn groep en ik kozen ervoor om ons te richten op senioren die graag uitstapjes maken, en daarop hebben we een passende webservice ontwikkeld. Hier vind je afbeeldingen van het prototype, de code en het uiteindelijke product van mijn bijdrage aan het project.</p>
+        <main>
+            <section class="card">
+                <h2>CLE3 Project</h2>
+
+                <section class="image-carousel">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-content">
+                            <img class="carousel-image" src="../img/download.jpg" alt="CLE3 Project Screenshot 1">
+                            <img class="carousel-image" src="../img/Screenshot 2023-04-05 110804.png" alt="CLE3 Project Screenshot 2">
+                            <img class="carousel-image" src="../img/Screenshot 2023-04-05 110835.png" alt="CLE3 Project Screenshot 3">
+                            <img class="carousel-image" src="../img/Screenshot 2023-04-05 115603.png" alt="CLE3 Project Screenshot 4">
+                            <img class="carousel-image" src="../img/Screenshot 2023-04-05 115623.png" alt="CLE3 Project Screenshot 5">
+                        </div>
+                    </div>
+                </section>
+
+                <p>Tijdens de derde CLE-opdracht was ons doel om een webservice te ontwikkelen voor een specifieke doelgroep. Mijn groep en ik kozen ervoor om ons te richten op senioren die graag uitstapjes maken, en daarop hebben we een passende webservice ontwikkeld. Hier vind je afbeeldingen van het prototype, de code en het uiteindelijke product van mijn bijdrage aan het project.</p>
             </section>
-    </section>
-        <section class="contact">
-            <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">Linkedin</a>
-            <br>
-            <a href="">raymond_kin_long@hotmail.com</a>
-        </section>
-            <footer>
-                <span> &copy; Copyright Raymond 2022</span>
-            </footer>
-            <div id="modal">
-                <span class="close">&times;</span>
-                <img id="modal-img" src="" alt="">
-            </div>
-            <script src="../js/script.js"></script>     
-        </section>
-    </section>
+
+            <section class="contact">
+                <p>Neem contact met mij op via:</p>
+                <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a>
+                <br>
+                <a href="mailto:raymond_kin_long@hotmail.com">raymond_kin_long@hotmail.com</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Copyright Raymond Lam 2022</p>
+        </footer>
+
+        <div id="modal">
+            <span class="close">&times;</span>
+            <img id="modal-img" src="" alt="">
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const page = document.getElementById("page");
+            page.classList.add("fade-in");
+            
+            const links = document.querySelectorAll("nav a");
+            links.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute("href");
+                    page.classList.remove("fade-in");
+                    page.classList.add("fade");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // De tijd moet overeenkomen met de CSS-transitie
+                });
+            });
+        });
+    </script>
 </body>
 </html>

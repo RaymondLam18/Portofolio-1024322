@@ -2,67 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introduction of Raymond Lam, highlighting skills and hobbies.">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Raymond Lam - Introductie</title>
 </head>
 <body>
-    <section>
-        <section id="header">
-        <h1>Portfolio</h1>
-    </section>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="introductie.html">Introductie</a>
-        <a href="projecten.html">Projecten</a>
-    </nav>
-    <section class="card">
-        <section>
-            <section id="intro">
+    <div id="page" class="fade">
+        <header>
+            <h1>Raymond Lam Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="introductie.html">Introductie</a></li>
+                    <li><a href="projecten.html">Projecten</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="card">
                 <h2>Introductie</h2>
-                    <section id="information">
-                        <p>Naam: Raymond Lam</p>
-                        <p>Leeftijd: 20 jaar</p>
-                        <p>Geslacht: man</p>
-                        <p>Opleiding: Hogeshool Rotterdam Creative Media & Game Technologies</p>
-                    </section>
-                    <br>
+                <section id="information">
+                    <p><strong>Naam:</strong> Raymond Lam</p>
+                    <p><strong>Leeftijd:</strong> 20 jaar</p>
+                    <p><strong>Geslacht:</strong> Man</p>
+                    <p><strong>Opleiding:</strong> Hogeschool Rotterdam - Creative Media & Game Technologies</p>
+                </section>
+                
                 <h2>Vaardigheden</h2>
-                    <section id="information">
-                        <h3>Front-end</h3>
+                <section id="skills">
+                    <h3>Front-end</h3>
+                    <ul>
                         <li>Vue.js</li>
                         <li>Javascript</li>
                         <li>React</li>
                         <li>React Native</li>
                         <li>Svelte</li>
-                        <li></li>
-                        <h3>Back-end</h3>
+                    </ul>
+
+                    <h3>Back-end</h3>
+                    <ul>
                         <li>PHP</li>
                         <li>Laravel</li>
                         <li>Node.js</li>
                         <li>Express.js</li>
-                        <li>Machine learning</li>
-                    </section>
-                    <br>
-                <h2>Hobby</h2>
-                    <section id="information">
+                        <li>Machine Learning</li>
+                    </ul>
+                </section>
+                
+                <h2>Hobby's</h2>
+                <section id="hobbies">
+                    <ul>
                         <li>Piano spelen</li>
                         <li>Gamen</li>
                         <li>Basketballen</li>
                         <li>Gunpla bouwen</li>
-                    </section>
-        </section>
-        <!-- <iframe src="https://www.youtube.com/embed/BDEXAdFAwuc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-    </section>
-    <section class="contact">
-        <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">Linkedin</a>
-        <br>
-        <a href="">raymond_kin_long@hotmail.com</a>
-        </section>
+                    </ul>
+                </section>
+            </section>
+
+            <section class="contact">
+                <p>Neem contact met mij op via:</p>
+                <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a>
+                <br>
+                <a href="mailto:raymond_kin_long@hotmail.com">raymond_kin_long@hotmail.com</a>
+            </section>
+        </main>
+
         <footer>
-            <span> &copy; Copyright Raymond 2022</span>
+            <p>&copy; Raymond Lam 2022</p>
         </footer>
-    </section>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const page = document.getElementById("page");
+            page.classList.add("fade-in");
+            
+            const links = document.querySelectorAll("nav a");
+            links.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute("href");
+                    page.classList.remove("fade-in");
+                    page.classList.add("fade");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // De tijd moet overeenkomen met de CSS-transitie
+                });
+            });
+        });
+    </script>
 </body>
 </html>

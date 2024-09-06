@@ -2,33 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Raymond Lam showcasing projects and contact information.">
     <link rel="stylesheet" href="css/style.css">
-    <title>Mijn Portfolio</title>
+    <title>Raymond Lam Portfolio</title>
 </head>
 <body>
-    <section id="header">
-        <h1>Portfolio</h1>
-    </section>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="introductie.html">Introductie</a>
-        <a href="projecten.html">Projecten</a>
-    </nav>
-    <section class="card">
-        <h2 class="Raymond">Raymond Lam</h2>
-        <section>
-          <img class="profile-picture"img src="img/92299f55-ccaa-4a2d-b766-68717bdc9666-removebg-preview.png" alt="Raymond Lam">
-        </section>
-        <section class="contact">
-            <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">Linkedin</a>
-            <br>
-            <a href="">raymond_kin_long@hotmail.com</a>
-        </section>
+    <div id="page" class="fade">
+        <header>
+            <h1>Raymond Lam Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="introductie.html">Introductie</a></li>
+                    <li><a href="projecten.html">Projecten</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="card">
+                <h2>Raymond Lam</h2>
+                <img class="profile-picture" src="img/92299f55-ccaa-4a2d-b766-68717bdc9666-removebg-preview.png" alt="Raymond Lam">
+                
+                <section class="contact">
+                    <p>Contact me on <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a></p>
+                    <p>Email: <a href="mailto:raymond_kin_long@hotmail.com">raymond_kin_long@hotmail.com</a></p>
+                </section>
+            </section>
+        </main>
+        
         <footer>
-            <span> &copy; Copyright Raymond 2022</span>
+            <p>&copy; Raymond Lam 2022</p>
         </footer>
-    </section>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const page = document.getElementById("page");
+            page.classList.add("fade-in");
+            
+            const links = document.querySelectorAll("nav a");
+            links.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute("href");
+                    page.classList.remove("fade-in");
+                    page.classList.add("fade");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // De tijd moet overeenkomen met de CSS-transitie
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -2,52 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programmeren 5 project over het maken van een website met Laravel. Bekijk afbeeldingen van de site en codevoorbeelden.">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Mijn Portfolio</title>
+    <title>Programmeren 5 Project - Portfolio van Raymond Lam</title>
 </head>
 <body>
-    <section id="header">
-        <h1>Portfolio</h1>
-    </section>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="../introductie.html">Introductie</a>
-        <a href="../projecten.html">Projecten</a>
-    </nav>
-    <section class="card">
-        <section>
-            <section id="project">
+    <div id="page" class="fade">
+        <header>
+            <h1>Raymond Lam Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../introductie.html">Introductie</a></li>
+                    <li><a href="../projecten.html">Projecten</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="card">
                 <h2>Programmeren 5</h2>
-                    <section class="image-carousel">
-                        <div class="carousel-wrapper">
-                            <div class="carousel-content">
-                                <img class="carousel-image"img src="../img/Screenshot 2024-04-04 102343.png" alt="Programmeren 5">
-                                <img class="carousel-image"img src="../img/Screenshot 2024-04-04 103254.png" alt="Programmeren 5">
-                                <img class="carousel-image"img src="../img/Screenshot 2024-04-04 103355.png" alt="Programmeren 5">
-                                <img class="carousel-image"img src="../img/Screenshot 2024-04-04 103500.png" alt="Programmeren 5">    
-                                <img class="carousel-image"img src="../img/Screenshot 2024-04-04 103629.png" alt="Programmeren 5">
-                            </div>
+
+                <section class="image-carousel">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-content">
+                            <img class="carousel-image" src="../img/Screenshot 2024-04-04 102343.png" alt="Programmeren 5 project screenshot 1">
+                            <img class="carousel-image" src="../img/Screenshot 2024-04-04 103254.png" alt="Programmeren 5 project screenshot 2">
+                            <img class="carousel-image" src="../img/Screenshot 2024-04-04 103355.png" alt="Programmeren 5 project screenshot 3">
+                            <img class="carousel-image" src="../img/Screenshot 2024-04-04 103500.png" alt="Programmeren 5 project screenshot 4">
+                            <img class="carousel-image" src="../img/Screenshot 2024-04-04 103629.png" alt="Programmeren 5 project screenshot 5">
                         </div>
-                    </section>
-                    <p>In Programmeren 5 werkten we met Laravel om een website te ontwikkelen over een onderwerp naar keuze. Ik heb ervoor gekozen om een website te maken waar gebruikers alles kunnen vinden over films en hun eigen reviews kunnen plaatsen. Hier zijn enkele afbeeldingen van de website en van een stukje code.</p>  
-         </section>
-    </section>
-        <section class="contact">
-            <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">Linkedin</a>
-            <br>
-            <a href="">raymond_kin_long@hotmail.com</a>
-        </section>
-            <footer>
-                <span> &copy; Copyright Raymond 2022</span>
-            </footer>
-            <div id="modal">
-                <span class="close">&times;</span>
-                <img id="modal-img" src="" alt="">
-            </div>
-            <script src="../js/script.js"></script>        
-        </section>
-    </section>
+                    </div>
+                </section>
+
+                <p>In Programmeren 5 werkten we met Laravel om een website te ontwikkelen over een onderwerp naar keuze. Ik heb ervoor gekozen om een website te maken waar gebruikers alles kunnen vinden over films en hun eigen reviews kunnen plaatsen. Hier zijn enkele afbeeldingen van de website en een stukje code.</p>
+            </section>
+
+            <section class="contact">
+                <p>Neem contact met mij op via:</p>
+                <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a>
+                <br>
+                <a href="mailto:raymond_kin_long@hotmail.com">raymond_kin_long@hotmail.com</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Copyright Raymond Lam 2022</p>
+        </footer>
+
+        <div id="modal">
+            <span class="close">&times;</span>
+            <img id="modal-img" src="" alt="">
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const page = document.getElementById("page");
+            page.classList.add("fade-in");
+            
+            const links = document.querySelectorAll("nav a");
+            links.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute("href");
+                    page.classList.remove("fade-in");
+                    page.classList.add("fade");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // De tijd moet overeenkomen met de CSS-transitie
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -2,50 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Raymond Lam's year 2 projects including Programmeren5, Programmeren6, TLE1, and Programmeren8.">
     <link rel="stylesheet" href="css/style.css">
-    <title>Mijn Portfolio</title>
+    <title>Raymond Lam - Jaar 2 Projecten</title>
 </head>
 <body>
-    <section id="header">
-        <h1>Portfolio</h1>
-    </section>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="introductie.html">Introductie</a>
-        <a href="projecten.html">Projecten</a>
-    </nav>
-    <section class="card">
-        <section>
-            <section id="jaren">
-                <h2>Projecten</h2>               
-                        <nav>
-                            <a href="Project2/Programmeren5.html">Programmeren5</a>
-                        </nav>
-                        <br>
-                        <nav>
-                            <a href="Project2/Programmeren6.html">Programmeren6</a>
-                        </nav>
-                        <br>
-                        <nav>
-                            <a href="Project2/TLE1.html">TLE1</a>
-                        </nav>
-                        <br>
-                        <nav>
-                            <a href="Project2/Programmeren8.html">Programmeren8</a>
-                        </na>
-        </section>
-    </section>
-        <section class="contact">
-            <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">Linkedin</a>
-            <br>
-            <a href="">raymond_kin_long@hotmail.com</a>
-        </section>
-            <footer>
-                <span> &copy; Copyright Raymond 2022</span>
-            </footer>
-        </section>
-    </section>
+    <div id="page" class="fade">
+        <header>
+            <h1>Projecten Jaar 2</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="introductie.html">Introductie</a></li>
+                    <li><a href="projecten.html">Projecten</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Projecten in Jaar 2</h2>
+                <p>Hieronder zijn enkele projecten van mijn tweede studiejaar. Klik op een project voor meer details.</p>
+
+                <section id="projects">
+                    <ul>
+                        <li><a href="Project2/Programmeren5.html">Programmeren 5 - Projectdetails</a></li>
+                        <li><a href="Project2/Programmeren6.html">Programmeren 6 - Projectdetails</a></li>
+                        <li><a href="Project2/TLE1.html">TLE 1 - Projectdetails</a></li>
+                        <li><a href="Project2/Programmeren8.html">Programmeren 8 - Projectdetails</a></li>
+                        <li><a href="Project2/Programmeren7.html">Programmeren 7 - [Project nog te uploaden]</a></li>
+                        <li><a href="Project2/TLE2.html">TLE 2 - [Project nog te uploaden]</a></li>
+                    </ul>
+                </section>
+            </section>
+
+            <section class="contact">
+                <p>Neem contact met mij op via:</p>
+                <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a>
+                <br>
+                <a href="mailto:raymond_kin_long@hotmail.com">raymond_kin_long@hotmail.com</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Raymond Lam 2022</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const page = document.getElementById("page");
+            page.classList.add("fade-in");
+            
+            const links = document.querySelectorAll("nav a");
+            links.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute("href");
+                    page.classList.remove("fade-in");
+                    page.classList.add("fade");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // De tijd moet overeenkomen met de CSS-transitie
+                });
+            });
+        });
+    </script>
 </body>
 </html>

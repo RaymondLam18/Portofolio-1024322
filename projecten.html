@@ -2,51 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Raymond Lam's projects during school years, categorized by year.">
     <link rel="stylesheet" href="css/style.css">
-    <title>Mijn Portfolio</title>
+    <title>Raymond Lam - Projecten</title>
 </head>
 <body>
-    <section id="header">
-        <h1>Portfolio</h1>
-    </section>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="introductie.html">Introductie</a>
-        <a href="projecten.html">Projecten</a>
-    </nav>
-    <section class="card">
-        <section>
-            <section id="jaren">
-                <h2>Schooljaren</h2>
-                    
-                        <nav>
-                            <a href="jaar1.html">Jaar 1</a>
-                        </nav>
-                        <br>
-                        <nav>
-                            <a href="jaar2.html">Jaar 2</a>
-                        </nav>
-                        <br>
-                        <nav>
-                            <a href="">Jaar 3</a>
-                        </nav>
-                        <br>
-                        <nav>
-                            <a href="">Jaar 4</a>
-                        </na>                    
-        </section>
-    </section>
-        <section class="contact">
-            <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">Linkedin</a>
-            <br>
-            <a href="">raymond_kin_long@hotmail.com</a>
-        </section>
-            <footer>
-                <span> &copy; Copyright Raymond 2022</span>
-            </footer>
-        </section>
-    </section>
+    <div id="page" class="fade">
+        <header>
+            <h1>Mijn Projecten</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="introductie.html">Introductie</a></li>
+                    <li><a href="projecten.html">Projecten</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Projecten per Schooljaar</h2>
+                <section id="school-years">
+                    <ul>
+                        <li><a href="jaar1.html">Jaar 1</a> - Basis projecten en kennismaking met programmeren.</li>
+                        <li><a href="jaar2.html">Jaar 2</a> - Gevorderde projecten met meer focus op front-end en back-end.</li>
+                        <li><a href="#">Jaar 3</a> - [Projecten nog te uploaden]</li>
+                        <li><a href="#">Jaar 4</a> - [Projecten nog te uploaden]</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section class="contact">
+                <p>Neem contact met mij op via:</p>
+                <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a>
+                <br>
+                <a href="mailto:raymond_kin_long@hotmail.com">raymond_kin_long@hotmail.com</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Raymond Lam 2022</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const page = document.getElementById("page");
+            page.classList.add("fade-in");
+            
+            const links = document.querySelectorAll("nav a");
+            links.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute("href");
+                    page.classList.remove("fade-in");
+                    page.classList.add("fade");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // De tijd moet overeenkomen met de CSS-transitie
+                });
+            });
+        });
+    </script>
 </body>
 </html>
