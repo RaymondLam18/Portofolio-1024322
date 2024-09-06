@@ -8,6 +8,13 @@ body {
   text-align: center;
 }
 
+.profile-picture {
+  max-width: 100%; /* Zorg ervoor dat de afbeelding nooit breder is dan haar container */
+  height: auto; /* Houd de hoogte in verhouding tot de breedte */
+  border-radius: 50%; /* Maak de afbeelding rond, optioneel */
+  margin: 20px 0; /* Voeg wat marge toe boven en onder de afbeelding */
+}
+
 /* Card styling */
 .card {
   background-color: white;
@@ -141,7 +148,6 @@ li {
   margin: 0 auto;
 }
 
-
 #modal {
   display: none;
   position: fixed;
@@ -177,7 +183,6 @@ li {
   cursor: pointer;
 }
 
-
 /* Footer */
 footer {
   background-color: #F5F5F5;
@@ -193,4 +198,55 @@ footer {
 
 .fade-in {
   opacity: 1;
+}
+
+/* Responsieve aanpassingen */
+@media (max-width: 768px) {
+    .profile-picture {
+      max-width: 80%; /* Beperk de afbeelding nog meer op kleine schermen */
+      height: auto; /* Houd de hoogte in verhouding tot de breedte */
+  }
+
+    .card {
+        width: 90%; /* Maak de card breder voor kleinere schermen */
+        margin: 2rem auto; /* Verminder de marge */
+        padding: 1.5rem; /* Verminder de padding */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stap over naar een verticale navigatie */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Vergroot de marge tussen de navigatie-items */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Maak de kopjes iets kleiner */
+    }
+
+    .carousel-image {
+        max-height: 200px; /* Pas de maximale hoogte van de afbeeldingen aan voor mobiel */
+    }
+
+    .contact {
+        font-size: 0.9rem; /* Verminder het lettertype voor contactinformatie */
+    }
+
+    footer {
+        font-size: 0.9rem; /* Verminder het lettertype in de footer */
+    }
+}
+
+/* Voorbeeld van een flexibele grid lay-out voor afbeeldingen */
+.image-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centreer de afbeeldingen */
+}
+
+.carousel-image {
+    flex: 1 1 45%; /* Maak afbeeldingen responsief */
+    max-width: 100%; /* Zorg ervoor dat de afbeeldingen niet breder zijn dan hun container */
+    margin: 1rem; /* Voeg ruimte toe rond de afbeeldingen */
 }
