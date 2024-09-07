@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programmeren 7 project over het maken van een mobiel app met Laravel. Inclusief screenshots en codefragmenten.">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Programmeren 7 Project - Portfolio van Raymond Lam</title>
+</head>
+<body>
+    <div id="page" class="fade">
+        <header>
+            <h1>Raymond Lam Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../introductie.html">Introductie</a></li>
+                    <li><a href="../projecten.html">Projecten</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Programmeren 7</h2>
+
+                <section class="image-carousel">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-content">
+                            <img class="carousel-image" src="../img/Screenshot 2024-09-07 010540.png" alt="Programmeren 7 project screenshot 1">
+                            <img class="carousel-image" src="../img/Screenshot 2024-09-07 010842.png" alt="Programmeren 7 project screenshot 2">
+                            <img class="carousel-image" src="../img/Screenshot 2024-09-07 011045.png" alt="Programmeren 7 project screenshot 3">
+                            <img class="carousel-image" src="../img/Screenshot 2024-09-07 011113.png" alt="Programmeren 7 project screenshot 4">
+                            <img class="carousel-image" src="../img/Screenshot 2024-09-07 011138.png" alt="Programmeren 7 project screenshot 5">
+                            <img class="carousel-image" src="../img/Screenshot 2024-09-07 011352.png" alt="Programmeren 7 project screenshot 6">
+                        </div>
+                    </div>
+                </section>
+
+                <p>Voor Programmeren 7 kregen we de opdracht om een mobiele applicatie te ontwikkelen waarmee je hotspots in Nederland kunt vinden. Ik heb ervoor gekozen om een app te bouwen waarmee gebruikers modelbouwwinkels in Nederland kunnen opsporen. Hieronder vind je enkele screenshots van de applicatie en codefragmenten.</p>
+            </section>
+
+            <section class="contact">
+                <p>Neem contact met mij op via:</p>
+                <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a>
+                <br>
+                <a href="mailto:raymond_kin_long@hotmail.com">raymond_kin_long@hotmail.com</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Raymond Lam 2022 - 2024</p>
+        </footer>
+
+        <div id="modal">
+            <span class="close">&times;</span>
+            <img id="modal-img" src="" alt="">
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const page = document.getElementById("page");
+            page.classList.add("fade-in");
+
+            const links = document.querySelectorAll("nav a");
+            links.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute("href");
+                    page.classList.remove("fade-in");
+                    page.classList.add("fade");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // De tijd moet overeenkomen met de CSS-transitie
+                });
+            });
+        });
+    </script>
+</body>
+</html>
