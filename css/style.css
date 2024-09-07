@@ -66,6 +66,50 @@ li {
   margin: 0.5rem 0;
 }
 
+/* Skills section styling */
+#skills {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#skills h3 {
+  text-align: center;
+}
+
+#skills ul {
+  list-style-type: square;
+  text-align: left;
+  padding: 0;
+}
+
+#skills > div {
+  flex: 1;
+  margin: 10px;
+}
+
+/* Passive skills styling */
+#passive-skills {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#passive-skills h3 {
+  text-align: center;
+}
+
+#passive-skills ul {
+  list-style-type: square;
+  text-align: left;
+  padding: 0;
+}
+
+#passive-skills > div {
+  flex: 1;
+  margin: 10px;
+}
+
 /* Project section styling */
 #projects ul {
   list-style: none;
@@ -213,7 +257,7 @@ footer {
     .profile-picture {
       max-width: 80%;
       height: auto;
-  }
+    }
 
     .card {
         width: 90%;
@@ -231,6 +275,24 @@ footer {
 
     h2 {
         font-size: 1.8rem;
+    }
+
+    #skills {
+      display: block;
+    }
+  
+    #skills > div {
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    #passive-skills {
+      display: block;
+    }
+  
+    #passive-skills > div {
+      margin: 0 auto;
+      width: 100%;
     }
 
     .carousel-image {
