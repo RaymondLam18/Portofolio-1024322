@@ -9,10 +9,10 @@ body {
 }
 
 .profile-picture {
-  max-width: 100%; /* Zorg ervoor dat de afbeelding nooit breder is dan haar container */
-  height: auto; /* Houd de hoogte in verhouding tot de breedte */
-  border-radius: 50%; /* Maak de afbeelding rond, optioneel */
-  margin: 20px 0; /* Voeg wat marge toe boven en onder de afbeelding */
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin: 20px 0;
 }
 
 /* Card styling */
@@ -87,7 +87,7 @@ li {
 }
 
 #projects li::before {
-  content: "\2022";  /* Bullet point */
+  content: "\2022";
   color: #3498DB;
   font-weight: bold;
   display: inline-block;
@@ -132,7 +132,7 @@ li {
 }
 
 #school-years li::before {
-  content: "\2022";  /* Bullet point */
+  content: "\2022";
   color: #3498DB;
   font-weight: bold;
   display: inline-block;
@@ -140,12 +140,20 @@ li {
   margin-right: 0.5em;
 }
 
+/* Carousel styling */
+.image-carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .carousel-image {
+  flex: 1 1 45%;
   max-width: 100%;
-  max-height: 300px; /* Pas deze waarde naar wens aan */
+  max-height: 300px;
   object-fit: cover;
+  margin: 1rem auto;
   display: block;
-  margin: 0 auto;
 }
 
 #modal {
@@ -187,7 +195,7 @@ li {
 footer {
   background-color: #F5F5F5;
   padding: 1rem;
-  margin-top: 2rem; /* Adds space between the main content and footer */
+  margin-top: 2rem;
   text-align: center;
 }
 
@@ -203,50 +211,37 @@ footer {
 /* Responsieve aanpassingen */
 @media (max-width: 768px) {
     .profile-picture {
-      max-width: 80%; /* Beperk de afbeelding nog meer op kleine schermen */
-      height: auto; /* Houd de hoogte in verhouding tot de breedte */
+      max-width: 80%;
+      height: auto;
   }
 
     .card {
-        width: 90%; /* Maak de card breder voor kleinere schermen */
-        margin: 2rem auto; /* Verminder de marge */
-        padding: 1.5rem; /* Verminder de padding */
+        width: 90%;
+        margin: 2rem auto;
+        padding: 1.5rem;
     }
 
     nav ul {
-        flex-direction: column; /* Stap over naar een verticale navigatie */
+        flex-direction: column;
     }
 
     nav ul li {
-        margin: 10px 0; /* Vergroot de marge tussen de navigatie-items */
+        margin: 10px 0;
     }
 
     h2 {
-        font-size: 1.8rem; /* Maak de kopjes iets kleiner */
+        font-size: 1.8rem;
     }
 
     .carousel-image {
-        max-height: 200px; /* Pas de maximale hoogte van de afbeeldingen aan voor mobiel */
+        max-height: 200px;
     }
 
     .contact {
-        font-size: 0.9rem; /* Verminder het lettertype voor contactinformatie */
+        font-size: 0.9rem;
     }
 
     footer {
-        font-size: 0.9rem; /* Verminder het lettertype in de footer */
+        font-size: 0.9rem;
     }
-}
-
-/* Voorbeeld van een flexibele grid lay-out voor afbeeldingen */
-.image-carousel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centreer de afbeeldingen */
-}
-
-.carousel-image {
-    flex: 1 1 45%; /* Maak afbeeldingen responsief */
-    max-width: 100%; /* Zorg ervoor dat de afbeeldingen niet breder zijn dan hun container */
-    margin: 1rem; /* Voeg ruimte toe rond de afbeeldingen */
 }
