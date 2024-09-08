@@ -40,6 +40,8 @@
                 <p>Voor Programmeren 7 kregen we de opdracht om een mobiele applicatie te ontwikkelen waarmee je hotspots in Nederland kunt vinden. Ik heb ervoor gekozen om een app te bouwen waarmee gebruikers modelbouwwinkels in Nederland kunnen opsporen. Hier vind je enkele screenshots van de applicatie en codefragmenten.</p>
             </section>
 
+            <button id="back-button">Terug</button>
+
             <section class="contact">
                 <p>Neem contact met mij op via:</p>
                 <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a>
@@ -76,6 +78,16 @@
                         window.location.href = href;
                     }, 500); // De tijd moet overeenkomen met de CSS-transitie
                 });
+            });
+
+            const backButton = document.getElementById("back-button");
+            backButton.addEventListener("click", function() {
+                page.classList.remove("fade-in");
+                page.classList.add("fade");
+
+                setTimeout(() => {
+                    window.history.back();
+                }, 500); // De tijd moet overeenkomen met de fade-out CSS-transitie
             });
         });
     </script>

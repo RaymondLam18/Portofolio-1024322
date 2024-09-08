@@ -38,6 +38,8 @@
                 <p>Tijdens onze eerste CLE-opdracht hebben we een product ontworpen dat het dagelijks leven van een klasgenoot kon vergemakkelijken. Samen met mijn team ontwikkelden we een geautomatiseerde machine voor het voeren van huisdieren, ideaal voor wanneer de eigenaar niet thuis is. Hier zie je afbeeldingen van het prototype, schetsen, code, bedrading en het uiteindelijke product.</p>  
             </section>
 
+            <button id="back-button">Terug</button>
+
             <section class="contact">
                 <p>Neem contact met mij op via:</p>
                 <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a>
@@ -61,7 +63,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             const page = document.getElementById("page");
             page.classList.add("fade-in");
-            
+
             const links = document.querySelectorAll("nav a");
             links.forEach(link => {
                 link.addEventListener("click", function(e) {
@@ -74,6 +76,16 @@
                         window.location.href = href;
                     }, 500); // De tijd moet overeenkomen met de CSS-transitie
                 });
+            });
+
+            const backButton = document.getElementById("back-button");
+            backButton.addEventListener("click", function() {
+                page.classList.remove("fade-in");
+                page.classList.add("fade");
+
+                setTimeout(() => {
+                    window.history.back();
+                }, 500); // De tijd moet overeenkomen met de fade-out CSS-transitie
             });
         });
     </script>

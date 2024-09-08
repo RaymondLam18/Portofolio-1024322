@@ -39,6 +39,8 @@
                 <p>In Programmeren 5 werkten we met Laravel om een website te ontwikkelen over een onderwerp naar keuze. Ik heb ervoor gekozen om een website te maken waar gebruikers alles kunnen vinden over films en hun eigen reviews kunnen plaatsen. Hier zijn enkele afbeeldingen van de website en een stukje code.</p>
             </section>
 
+            <button id="back-button">Terug</button>
+
             <section class="contact">
                 <p>Neem contact met mij op via:</p>
                 <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a>
@@ -62,7 +64,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             const page = document.getElementById("page");
             page.classList.add("fade-in");
-            
+
             const links = document.querySelectorAll("nav a");
             links.forEach(link => {
                 link.addEventListener("click", function(e) {
@@ -75,6 +77,16 @@
                         window.location.href = href;
                     }, 500); // De tijd moet overeenkomen met de CSS-transitie
                 });
+            });
+
+            const backButton = document.getElementById("back-button");
+            backButton.addEventListener("click", function() {
+                page.classList.remove("fade-in");
+                page.classList.add("fade");
+
+                setTimeout(() => {
+                    window.history.back();
+                }, 500); // De tijd moet overeenkomen met de fade-out CSS-transitie
             });
         });
     </script>

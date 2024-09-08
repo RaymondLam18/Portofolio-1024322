@@ -38,6 +38,8 @@
                 <p>Tijdens de tweede CLE-opdracht was de taak om een reserveringssysteem te ontwikkelen voor een opdrachtgever. Ik besloot mijn buurvrouw te kiezen, die in een restaurant werkt. Omdat ze al een website hadden, was mijn uitdaging om mijn werk te integreren in hun bestaande site. Hier zie je afbeeldingen van de website waarvoor ik het reserveringssysteem ontwikkelde, inclusief het reserveringsformulier en de bijbehorende code.</p>
             </section>
 
+            <button id="back-button">Terug</button>
+
             <section class="contact">
                 <p>Neem contact met mij op via:</p>
                 <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a>
@@ -61,7 +63,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             const page = document.getElementById("page");
             page.classList.add("fade-in");
-            
+
             const links = document.querySelectorAll("nav a");
             links.forEach(link => {
                 link.addEventListener("click", function(e) {
@@ -74,6 +76,16 @@
                         window.location.href = href;
                     }, 500); // De tijd moet overeenkomen met de CSS-transitie
                 });
+            });
+
+            const backButton = document.getElementById("back-button");
+            backButton.addEventListener("click", function() {
+                page.classList.remove("fade-in");
+                page.classList.add("fade");
+
+                setTimeout(() => {
+                    window.history.back();
+                }, 500); // De tijd moet overeenkomen met de fade-out CSS-transitie
             });
         });
     </script>

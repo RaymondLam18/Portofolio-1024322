@@ -252,6 +252,22 @@ footer {
   opacity: 1;
 }
 
+#back-button {
+  background-color: #3498DB;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+#back-button:hover {
+  background-color: #1F618D;
+}
+
+
 /* Responsieve aanpassingen */
 @media (max-width: 768px) {
     .profile-picture {
