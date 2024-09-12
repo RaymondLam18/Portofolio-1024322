@@ -267,6 +267,17 @@ footer {
   background-color: #1F618D;
 }
 
+#languages-hobbies {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem auto;
+  width: 80%;
+}
+
+#languages-hobbies > div {
+  flex: 1;
+  margin: 0 1rem;
+}
 
 /* Responsieve aanpassingen */
 @media (max-width: 768px) {
@@ -308,6 +319,16 @@ footer {
   
     #passive-skills > div {
       margin: 0 auto;
+      width: 100%;
+    }
+
+    #languages-hobbies {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    #languages-hobbies > div {
+      margin: 1rem 0;
       width: 100%;
     }
 
